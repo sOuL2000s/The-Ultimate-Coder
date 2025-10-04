@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ultimate-coder-cache-v1.1'; // Updated cache version for new app
+const CACHE_NAME = 'ultimate-coder-cache-v1.3'; // Updated cache version for new app and theme changes
 const urlsToCache = [
     '/',
     'index.html',
@@ -13,6 +13,7 @@ const urlsToCache = [
     'https://cdn.jsdelivr.net/npm/lucide-dynamic@latest/dist/lucide.min.js',
     'https://unpkg.com/lucide@latest',
     'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-dark.min.css', // Prism CSS
+    'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css', // Prism light CSS
     'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js', // Prism Core JS
     'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-clike.min.js', // Prism languages
     'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js',

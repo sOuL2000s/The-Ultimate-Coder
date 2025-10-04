@@ -19,8 +19,9 @@
     <script src="https://cdn.jsdelivr.net/npm/lucide-dynamic@latest/dist/lucide.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <!-- Prism.js for syntax highlighting -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-dark.min.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <!-- Dynamically load dark or light Prism theme based on app theme -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-dark.min.css" rel="stylesheet" id="prism-dark-theme" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" id="prism-light-theme" disabled />
     <!-- Include common languages (adjust as needed) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-clike.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
@@ -34,6 +35,11 @@
 
 
     <style>
+        /* Ensure consistent box-sizing across all elements */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
         /*
          * --- Custom Styles for The Ultimate Coder AI Chat Assistant ---
          * This section defines a developer-centric theme with a dark background,
@@ -43,9 +49,11 @@
         /* Base font and transition settings for the whole page */
         html, body {
             height: 100%;
+            width: 100vw; /* Ensure body takes full viewport width */
             margin: 0;
             padding: 0;
-            overflow: hidden;
+            overflow-y: hidden; /* Only vertical overflow for body */
+            overflow-x: hidden; /* Added to explicitly prevent horizontal scrolling */
             font-family: 'Inter', sans-serif;
             transition: background-color 0.6s ease, color 0.6s ease;
             display: flex;
@@ -58,7 +66,7 @@
         body[data-theme="coder-dark"] {
             --bg-primary: #0A0A0F; /* Very dark background */
             --bg-secondary: #1E1E28; /* Slightly lighter for secondary elements */
-            --text-primary: #E0E0E0; /* Light text */
+            --text-primary: #00BCD4; /* Light text */
             --text-secondary: #8B949E; /* Muted gray text */
             --border-color: #30363D; /* Darker border */
             --card-bg: #1E1E28; /* Card backgrounds */
@@ -91,7 +99,7 @@
         body[data-theme="coder-light"] {
             --bg-primary: #F0F2F5; /* Light gray background */
             --bg-secondary: #FFFFFF; /* White for secondary elements */
-            --text-primary: #2C2C30; /* Dark text */
+            --text-primary: #008C9D; /* Dark text */
             --text-secondary: #718096; /* Muted gray text */
             --border-color: #DDE2E8; /* Light border */
             --card-bg: #FFFFFF; /* Card backgrounds */
@@ -119,6 +127,276 @@
             background-size: cover;
             background-attachment: fixed;
         }
+
+        /* --- NEW THEMES START HERE --- */
+
+        /* Cyberpunk Neon Theme (Dark) */
+        body[data-theme="cyberpunk-dark"] {
+            --bg-primary: #120A1A; /* Deep dark purple */
+            --bg-secondary: #2C1A3A;
+            --text-primary: #00FFFF;
+            --text-secondary: #A08AB2;
+            --border-color: #4C2B60;
+            --card-bg: #2C1A3A;
+            --card-border: #4C2B60;
+            --header-bg: #1A0F24;
+            --accent-primary: #00FFFF; /* Electric Cyan */
+            --accent-primary-hover: #00CED1;
+            --accent-secondary: #FF1493; /* Deep Pink */
+            --accent-error: #FF4500; /* Orange Red */
+            --accent-success: #32CD32; /* Lime Green */
+            --user-bubble-bg: #3A204D;
+            --user-bubble-text: #E0E0E0;
+            --ai-bubble-bg: #22152F;
+            --ai-bubble-text: #E0E0E0;
+            --sidebar-bg: #120A1A;
+            --sidebar-border: #4C2B60;
+            --sidebar-item-hover: #2C1A3A;
+            --loader-dot-color: var(--accent-primary);
+            --code-block-bg: #1A1022;
+            --code-block-header-bg: #271C35;
+            --code-block-border: #3A2548;
+
+            background-image: radial-gradient(at 0% 0%, hsl(280, 50%, 8%) 0%, transparent 50%),
+                              radial-gradient(at 100% 100%, hsl(320, 50%, 8%) 0%, transparent 50%);
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        /* Matrix Code Theme (Dark) */
+        body[data-theme="matrix-dark"] {
+            --bg-primary: #000000; /* Pure black */
+            --bg-secondary: #0A0A0A;
+            --text-primary: #00FF00; /* Neon Green */
+            --text-secondary: #008000; /* Darker Green */
+            --border-color: #004000;
+            --card-bg: #0A0A0A;
+            --card-border: #004000;
+            --header-bg: #000000;
+            --accent-primary: #00FF00;
+            --accent-primary-hover: #00CC00;
+            --accent-secondary: #00FFFF; /* Cyan */
+            --accent-error: #FF0000; /* Red */
+            --accent-success: #00FF00; /* Green */
+            --user-bubble-bg: #001A00;
+            --user-bubble-text: #00FF00;
+            --ai-bubble-bg: #000500;
+            --ai-bubble-text: #00FF00;
+            --sidebar-bg: #000000;
+            --sidebar-border: #004000;
+            --sidebar-item-hover: #001500;
+            --loader-dot-color: var(--accent-primary);
+            --code-block-bg: #000A00;
+            --code-block-header-bg: #001000;
+            --code-block-border: #002000;
+
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 100"><defs><pattern id="matrix-pattern" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse"><text x="1" y="8" fill="%23004000" font-family="monospace" font-size="9">10</text></pattern></defs><rect x="0" y="0" width="100%" height="100%" fill="url(%23matrix-pattern)"/></svg>');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        /* Solarized Light Theme */
+        body[data-theme="solarized-light"] {
+            --bg-primary: #FDF6E3; /* Base3 */
+            --bg-secondary: #EEE8D5; /* Base2 */
+            --text-primary: #2AA198; /* Base01 */
+            --text-secondary: #657B83; /* Base00 */
+            --border-color: #93A1A1; /* Base0 */
+            --card-bg: #EEE8D5;
+            --card-border: #93A1A1;
+            --header-bg: #FDF6E3;
+            --accent-primary: #2AA198; /* Cyan */
+            --accent-primary-hover: #268BD2; /* Blue */
+            --accent-secondary: #DC322F; /* Red */
+            --accent-error: #DC322F;
+            --accent-success: #859900; /* Green */
+            --user-bubble-bg: #839496; /* Base0 */
+            --user-bubble-text: #FDF6E3;
+            --ai-bubble-bg: #E0E0D0; /* Slightly darker than bg_secondary */
+            --ai-bubble-text: #586E75;
+            --sidebar-bg: #FDF6E3;
+            --sidebar-border: #93A1A1;
+            --sidebar-item-hover: #EEE8D5;
+            --loader-dot-color: var(--accent-primary);
+            --code-block-bg: #EEE8D5;
+            --code-block-header-bg: #FDF6E3;
+            --code-block-border: #D0D0C0;
+
+            background-image: radial-gradient(at 0% 0%, hsl(45, 60%, 96%) 0%, transparent 50%),
+                              radial-gradient(at 100% 100%, hsl(40, 50%, 95%) 0%, transparent 50%);
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        /* Dracula Theme (Dark) */
+        body[data-theme="dracula-dark"] {
+            --bg-primary: #282A36; /* Background */
+            --bg-secondary: #343746; /* Current Line/Selection */
+            --text-primary: #BD93F9; /* Foreground */
+            --text-secondary: #6272A4; /* Comment */
+            --border-color: #44475A; /* Selection Background */
+            --card-bg: #343746;
+            --card-border: #44475A;
+            --header-bg: #21222C; /* Darker Background */
+            --accent-primary: #BD93F9; /* Purple */
+            --accent-primary-hover: #FF79C6; /* Pink */
+            --accent-secondary: #50FA7B; /* Green */
+            --accent-error: #FF5555; /* Red */
+            --accent-success: #50FA7B;
+            --user-bubble-bg: #44475A;
+            --user-bubble-text: #F8F8F2;
+            --ai-bubble-bg: #2F313E;
+            --ai-bubble-text: #F8F8F2;
+            --sidebar-bg: #282A36;
+            --sidebar-border: #44475A;
+            --sidebar-item-hover: #343746;
+            --loader-dot-color: var(--accent-primary);
+            --code-block-bg: #21222C;
+            --code-block-header-bg: #2F313E;
+            --code-block-border: #44475A;
+
+            background-image: radial-gradient(at 0% 0%, hsl(260, 20%, 15%) 0%, transparent 50%),
+                              radial-gradient(at 100% 100%, hsl(300, 20%, 15%) 0%, transparent 50%);
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        /* Monokai Pro Theme (Dark) */
+        body[data-theme="monokai-dark"] {
+            --bg-primary: #2D2A2E; /* Background */
+            --bg-secondary: #3B3A3E; /* Slightly lighter background */
+            --text-primary: #A6E22E; /* Foreground */
+            --text-secondary: #75715E; /* Comment */
+            --border-color: #49483E;
+            --card-bg: #3B3A3E;
+            --card-border: #49483E;
+            --header-bg: #232124; /* Darker background */
+            --accent-primary: #A6E22E; /* Green */
+            --accent-primary-hover: #E6DB74; /* Yellow */
+            --accent-secondary: #FD971F; /* Orange */
+            --accent-error: #F92672; /* Pink */
+            --accent-success: #A6E22E;
+            --user-bubble-bg: #49483E;
+            --user-bubble-text: #FCFCFA;
+            --ai-bubble-bg: #363438;
+            --ai-bubble-text: #FCFCFA;
+            --sidebar-bg: #2D2A2E;
+            --sidebar-border: #49483E;
+            --sidebar-item-hover: #3B3A3E;
+            --loader-dot-color: var(--accent-primary);
+            --code-block-bg: #232124;
+            --code-block-header-bg: #363438;
+            --code-block-border: #49483E;
+
+            background-image: radial-gradient(at 0% 0%, hsl(300, 10%, 15%) 0%, transparent 50%),
+                              radial-gradient(at 100% 100%, hsl(280, 10%, 15%) 0%, transparent 50%);
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+
+        /* Nord Theme (Dark) */
+        body[data-theme="nord-dark"] {
+            --bg-primary: #2E3440; /* Nord0 */
+            --bg-secondary: #3B4252; /* Nord1 */
+            --text-primary: #88C0D0; /* Nord4 */
+            --text-secondary: #ECEFF4; /* Nord6 */
+            --border-color: #4C566A; /* Nord3 */
+            --card-bg: #3B4252;
+            --card-border: #4C566A;
+            --header-bg: #242933; /* Darker than Nord0 */
+            --accent-primary: #88C0D0; /* Nord8 (Cyan) */
+            --accent-primary-hover: #81A1C1; /* Nord7 (Blue) */
+            --accent-secondary: #B48EAD; /* Nord10 (Purple) */
+            --accent-error: #BF616A; /* Nord11 (Red) */
+            --accent-success: #A3BE8C; /* Nord14 (Green) */
+            --user-bubble-bg: #4C566A;
+            --user-bubble-text: #D8DEE9;
+            --ai-bubble-bg: #343A48;
+            --ai-bubble-text: #D8DEE9;
+            --sidebar-bg: #2E3440;
+            --sidebar-border: #4C566A;
+            --sidebar-item-hover: #3B4252;
+            --loader-dot-color: var(--accent-primary);
+            --code-block-bg: #242933;
+            --code-block-header-bg: #343A48;
+            --code-block-border: #4C566A;
+
+            background-image: radial-gradient(at 0% 0%, hsl(220, 15%, 15%) 0%, transparent 50%),
+                              radial-gradient(at 100% 100%, hsl(230, 15%, 15%) 0%, transparent 50%);
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+
+        /* Gruvbox Dark Theme */
+        body[data-theme="gruvbox-dark"] {
+            --bg-primary: #282828; /* bg0_h */
+            --bg-secondary: #3C3836; /* bg0 */
+            --text-primary: #83A598; /* fg */
+            --text-secondary: #A89984; /* grey */
+            --border-color: #504945; /* bg1 */
+            --card-bg: #3C3836;
+            --card-border: #504945;
+            --header-bg: #1D2021; /* Darker */
+            --accent-primary: #83A598; /* aqua */
+            --accent-primary-hover: #B8BB26; /* green */
+            --accent-secondary: #FABD2F; /* yellow */
+            --accent-error: #FB4934; /* red */
+            --accent-success: #B8BB26;
+            --user-bubble-bg: #504945;
+            --user-bubble-text: #EBDBB2;
+            --ai-bubble-bg: #32302F;
+            --ai-bubble-text: #EBDBB2;
+            --sidebar-bg: #282828;
+            --sidebar-border: #504945;
+            --sidebar-item-hover: #3C3836;
+            --loader-dot-color: var(--accent-primary);
+            --code-block-bg: #1D2021;
+            --code-block-header-bg: #32302F;
+            --code-block-border: #504945;
+
+            background-image: radial-gradient(at 0% 0%, hsl(30, 5%, 15%) 0%, transparent 50%),
+                              radial-gradient(at 100% 100%, hsl(20, 5%, 15%) 0%, transparent 50%);
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        /* Catppuccin Macchiato Theme (Dark, but lighter) */
+        body[data-theme="catppuccin-dark"] {
+            --bg-primary: #24273A; /* Base */
+            --bg-secondary: #363A4F; /* Mantle */
+            --text-primary: #8BD5CA; /* Text */
+            --text-secondary: #A5ADCE; /* Subtext0 */
+            --border-color: #494D64; /* Surface1 */
+            --card-bg: #363A4F;
+            --card-border: #494D64;
+            --header-bg: #1E2030; /* Crust */
+            --accent-primary: #8BD5CA; /* Teal */
+            --accent-primary-hover: #B7BFEF; /* Lavender */
+            --accent-secondary: #F4B8E4; /* Pink */
+            --accent-error: #ED8796; /* Red */
+            --accent-success: #A6DA95; /* Green */
+            --user-bubble-bg: #494D64;
+            --user-bubble-text: #CAD3F5;
+            --ai-bubble-bg: #2E3243;
+            --ai-bubble-text: #CAD3F5;
+            --sidebar-bg: #24273A;
+            --sidebar-border: #494D64;
+            --sidebar-item-hover: #363A4F;
+            --loader-dot-color: var(--accent-primary);
+            --code-block-bg: #1E2030;
+            --code-block-header-bg: #2E3243;
+            --code-block-border: #494D64;
+
+            background-image: radial-gradient(at 0% 0%, hsl(230, 15%, 15%) 0%, transparent 50%),
+                              radial-gradient(at 100% 100%, hsl(250, 15%, 15%) 0%, transparent 50%);
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        /* --- NEW THEMES END HERE --- */
 
         /* --- Global Styles & Overrides --- */
 
@@ -237,7 +515,7 @@
         /* Main Chat Window Styling */
         #main-chat-window {
             flex: 1;
-            max-width: 100%;
+            width: 100%; /* Explicitly ensure it takes full available width in flex context */
             min-height: 100vh;
             height: 100vh;
             display: flex;
@@ -267,6 +545,7 @@
             height: 100vh;
             overflow-y: auto;
             transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+            flex-shrink: 0; /* Prevents sidebar from shrinking */
         }
         #sidebar.hidden-mobile {
             transform: translateX(-100%);
@@ -372,6 +651,17 @@
             font-family: 'Fira Code', 'Cascadia Code', 'Consolas', monospace; /* Monospace for code */
             font-size: 0.9em; line-height: 1.4;
         }
+        /* Override Prism.js default styles for code blocks */
+        .code-block-container pre[class*="language-"] {
+            background-color: var(--code-block-bg) !important; /* Force background from theme variable */
+            padding: 1rem !important; /* Re-apply padding if Prism removes it */
+            margin: 0 !important; /* Re-apply margin if Prism adds it */
+        }
+
+        .code-block-container pre code[class*="language-"] {
+            color: var(--text-primary) !important; /* Set default code text color */
+        }
+
         .code-block-header {
             display: flex; justify-content: space-between; align-items: center;
             background-color: var(--code-block-header-bg); /* Themed */
@@ -391,10 +681,10 @@
 
         /* Smallest font size for inline code blocks if any */
         .chat-message.ai .message-content code:not(pre > code) {
-            background-color: color-mix(in srgb, var(--accent-primary) 15%, transparent);
+            background-color: color-mix(in srgb, var(--accent-primary) 15%, transparent) !important;
             border-radius: 0.25rem;
             padding: 0.2em 0.4em; font-family: 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
-            font-size: 0.9em; color: var(--accent-primary);
+            font-size: 0.9em; color: var(--accent-primary) !important;
         }
 
         /* Ensure links are distinguishable */
@@ -678,7 +968,14 @@
             <h3 class="text-sm font-semibold uppercase" style="color: var(--text-secondary);">Themes</h3>
             <select id="app-theme-select-sidebar" class="w-full p-2 rounded-md border text-sm focus:ring-[var(--accent-primary)] focus:border-[var(--accent-primary)]" style="background-color: var(--card-bg); border-color: var(--border-color); color: var(--text-primary);" aria-label="Select App Theme">
                 <option value="coder">Coder's Theme</option>
-                <!-- Add other themes here if you wish to expand beyond the default Coder's Dark/Light. -->
+                <option value="cyberpunk">Cyberpunk Neon (Dark)</option>
+                <option value="matrix">Matrix Code (Dark)</option>
+                <option value="solarized">Solarized (Light)</option>
+                <option value="dracula">Dracula (Dark)</option>
+                <option value="monokai">Monokai Pro (Dark)</option>
+                <option value="nord">Nord (Dark)</option>
+                <option value="gruvbox">Gruvbox (Dark)</option>
+                <option value="catppuccin">Catppuccin (Dark)</option>
             </select>
         </div>
 
@@ -1028,9 +1325,25 @@
                 if (appThemeSelect && appThemeSelect.value !== themeName) {
                     appThemeSelect.value = themeName;
                 }
+
+                // Dynamic Prism theme loading
+                const prismDarkThemeLink = document.getElementById('prism-dark-theme');
+                const prismLightThemeLink = document.getElementById('prism-light-theme');
+
+                // Themes that are always dark or always light will override the global dark mode toggle for Prism
+                const forcedDarkThemes = ['cyberpunk', 'matrix', 'dracula', 'monokai', 'nord', 'gruvbox', 'catppuccin'];
+                const forcedLightThemes = ['solarized'];
+
+                if (forcedDarkThemes.includes(themeName) || (mode === 'dark' && !forcedLightThemes.includes(themeName))) {
+                    if (prismDarkThemeLink) prismDarkThemeLink.disabled = false;
+                    if (prismLightThemeLink) prismLightThemeLink.disabled = true;
+                } else if (forcedLightThemes.includes(themeName) || (mode === 'light' && !forcedDarkThemes.includes(themeName))) {
+                    if (prismDarkThemeLink) prismDarkThemeLink.disabled = true;
+                    if (prismLightThemeLink) prismLightThemeLink.disabled = false;
+                }
             }
 
-            // Initialize Theme
+            // Initialize Theme (called first to set initial theme and Prism.js theme)
             const storedThemeName = localStorage.getItem(THEME_STORAGE_KEY) || DEFAULT_THEME_NAME;
             const storedMode = localStorage.getItem(MODE_STORAGE_KEY) || DEFAULT_MODE;
             applyTheme(storedThemeName, storedMode);
@@ -1045,7 +1358,22 @@
             if (appThemeSelect) {
                 appThemeSelect.addEventListener('change', (event) => {
                     const newThemeName = event.target.value;
-                    applyTheme(newThemeName, currentMode);
+                    let newMode = currentMode; // Start with current mode
+                    
+                    // Specific themes are forced to dark or light
+                    const forcedDarkThemes = ['cyberpunk', 'matrix', 'dracula', 'monokai', 'nord', 'gruvbox', 'catppuccin'];
+                    const forcedLightThemes = ['solarized'];
+
+                    if (forcedDarkThemes.includes(newThemeName)) {
+                         newMode = 'dark';
+                         darkModeToggle.checked = true; // Visually update toggle
+                    } else if (forcedLightThemes.includes(newThemeName)) {
+                        newMode = 'light';
+                        darkModeToggle.checked = false; // Visually update toggle
+                    }
+                    // For 'coder' theme, or if a theme doesn't force a mode, keep the current `newMode` based on the toggle.
+                    
+                    applyTheme(newThemeName, newMode);
                 });
             }
 
@@ -2205,7 +2533,7 @@
 </body>
 </html>
 
--------------------------------------------------------------------------------------------
+------------------------
 
 {
     "name": "The Ultimate Coder",
@@ -2232,9 +2560,9 @@
     "orientation": "portrait"
 }
 
------------------------------------------------------------------------
+-----------------------------
 
-const CACHE_NAME = 'ultimate-coder-cache-v1.0'; // Updated cache version for new app
+const CACHE_NAME = 'ultimate-coder-cache-v1.2'; // Updated cache version for new app
 const urlsToCache = [
     '/',
     'index.html',
@@ -2342,7 +2670,6 @@ self.addEventListener('fetch', (event) => {
     }
 });
 
----------------------------------------------------------------------------------------------------------
+----------------------------------------------
 
-add many more different coding related themes that look good.
-fix the fact that there is an empty space outside the chatbot on the right side, fix that. i've shared a screenshot of how it looks. please fix it.
+Why the app icon is not being shown when the app is installed and it is showing the initial letter of the app only? Why is that happening? While it is being shown as the logo on the browser tab, but it is not being shown when installed. So fix that issue. Another big thing that you will have to do is that the matrix theme that you are seeing, just like that I want pitch dark background, pure black background for every other theme. And just how the matrix theme is working, I want all the other themes to work the same exact way in their different ways. And one more thing is, each and every theme must have their specific light and dark mode. When switched to light mode or switched to dark mode, they must look complementary to each other.

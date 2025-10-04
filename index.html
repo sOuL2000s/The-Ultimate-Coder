@@ -64,14 +64,14 @@
 
         /* Coder's Dark Theme (Default) */
         body[data-theme="coder-dark"] {
-            --bg-primary: #0A0A0F; /* Very dark background */
-            --bg-secondary: #1E1E28; /* Slightly lighter for secondary elements */
+            --bg-primary: #000000; /* Pure black */
+            --bg-secondary: #0A0A0A; /* Slightly lighter for secondary elements */
             --text-primary: #00BCD4; /* Light text */
             --text-secondary: #8B949E; /* Muted gray text */
             --border-color: #30363D; /* Darker border */
-            --card-bg: #1E1E28; /* Card backgrounds */
+            --card-bg: #0A0A0A; /* Card backgrounds */
             --card-border: #30363D;
-            --header-bg: #12121A; /* Header background */
+            --header-bg: #000000; /* Header background */
             --accent-primary: #00BCD4; /* Cyan/Teal for primary actions */
             --accent-primary-hover: #0097A7;
             --accent-secondary: #8A2BE2; /* BlueViolet for secondary accents */
@@ -79,20 +79,15 @@
             --accent-success: #22C55E; /* Standard green */
             --user-bubble-bg: #2C3E50; /* Dark blue-gray for user */
             --user-bubble-text: #E0E0E0;
-            --ai-bubble-bg: #1A1A24; /* Even darker for AI */
+            --ai-bubble-bg: #1A1A1A; /* Even darker for AI */
             --ai-bubble-text: #E0E0E0;
-            --sidebar-bg: #0A0A0F; /* Sidebar matches primary bg */
+            --sidebar-bg: #000000; /* Sidebar matches primary bg */
             --sidebar-border: #30363D;
-            --sidebar-item-hover: #1E1E28;
+            --sidebar-item-hover: #0A0A0A;
             --loader-dot-color: var(--accent-primary);
-            --code-block-bg: #1A1A1D; /* Specific dark for code blocks */
+            --code-block-bg: #1A1A1A; /* Specific dark for code blocks */
             --code-block-header-bg: #27272A;
             --code-block-border: #3F3F46;
-
-            background-image: radial-gradient(at 0% 0%, hsl(240, 60%, 8%) 0%, transparent 50%),
-                              radial-gradient(at 100% 100%, hsl(260, 50%, 8%) 0%, transparent 50%);
-            background-size: cover;
-            background-attachment: fixed;
         }
 
         /* Coder's Light Theme */
@@ -128,42 +123,61 @@
             background-attachment: fixed;
         }
 
-        /* --- NEW THEMES START HERE --- */
-
-        /* Cyberpunk Neon Theme (Dark) */
+        /* --- Cyberpunk Theme --- */
         body[data-theme="cyberpunk-dark"] {
-            --bg-primary: #120A1A; /* Deep dark purple */
-            --bg-secondary: #2C1A3A;
-            --text-primary: #00FFFF;
-            --text-secondary: #A08AB2;
-            --border-color: #4C2B60;
-            --card-bg: #2C1A3A;
-            --card-border: #4C2B60;
-            --header-bg: #1A0F24;
-            --accent-primary: #00FFFF; /* Electric Cyan */
+            --bg-primary: #000000; /* Pure black */
+            --bg-secondary: #1A0F24; /* Deep dark purple */
+            --text-primary: #00FFFF; /* Electric Cyan */
+            --text-secondary: #A08AB2; /* Muted purple */
+            --border-color: #3A1D4D;
+            --card-bg: #1A0F24;
+            --card-border: #3A1D4D;
+            --header-bg: #0A050F;
+            --accent-primary: #00FFFF;
             --accent-primary-hover: #00CED1;
             --accent-secondary: #FF1493; /* Deep Pink */
             --accent-error: #FF4500; /* Orange Red */
             --accent-success: #32CD32; /* Lime Green */
             --user-bubble-bg: #3A204D;
             --user-bubble-text: #E0E0E0;
-            --ai-bubble-bg: #22152F;
+            --ai-bubble-bg: #100814;
             --ai-bubble-text: #E0E0E0;
-            --sidebar-bg: #120A1A;
-            --sidebar-border: #4C2B60;
-            --sidebar-item-hover: #2C1A3A;
+            --sidebar-bg: #000000;
+            --sidebar-border: #3A1D4D;
+            --sidebar-item-hover: #1A0F24;
             --loader-dot-color: var(--accent-primary);
-            --code-block-bg: #1A1022;
-            --code-block-header-bg: #271C35;
-            --code-block-border: #3A2548;
-
-            background-image: radial-gradient(at 0% 0%, hsl(280, 50%, 8%) 0%, transparent 50%),
-                              radial-gradient(at 100% 100%, hsl(320, 50%, 8%) 0%, transparent 50%);
-            background-size: cover;
-            background-attachment: fixed;
+            --code-block-bg: #100814;
+            --code-block-header-bg: #20102A;
+            --code-block-border: #3A1D4D;
+        }
+        body[data-theme="cyberpunk-light"] {
+            --bg-primary: #F0F8FF; /* AliceBlue */
+            --bg-secondary: #FFFFFF;
+            --text-primary: #00CED1; /* Dark Cyan */
+            --text-secondary: #6A5ACD; /* SlateBlue */
+            --border-color: #ADD8E6; /* LightBlue */
+            --card-bg: #FFFFFF;
+            --card-border: #ADD8E6;
+            --header-bg: #E0F2F7;
+            --accent-primary: #00CED1;
+            --accent-primary-hover: #00BFFF; /* Deep Sky Blue */
+            --accent-secondary: #FF69B4; /* Hot Pink */
+            --accent-error: #DC143C; /* Crimson */
+            --accent-success: #3CB371; /* Medium Sea Green */
+            --user-bubble-bg: #E0FFFF; /* Light Cyan */
+            --user-bubble-text: #2F4F4F; /* Dark Slate Gray */
+            --ai-bubble-bg: #F0F8FF;
+            --ai-bubble-text: #4169E1; /* Royal Blue */
+            --sidebar-bg: #FFFFFF;
+            --sidebar-border: #ADD8E6;
+            --sidebar-item-hover: #E0F2F7;
+            --loader-dot-color: var(--accent-primary);
+            --code-block-bg: #E0FFFF;
+            --code-block-header-bg: #ADD8E6;
+            --code-block-border: #87CEEB; /* SkyBlue */
         }
 
-        /* Matrix Code Theme (Dark) */
+        /* --- Matrix Code Theme --- */
         body[data-theme="matrix-dark"] {
             --bg-primary: #000000; /* Pure black */
             --bg-secondary: #0A0A0A;
@@ -195,14 +209,45 @@
             background-attachment: fixed;
             background-position: center;
         }
+        body[data-theme="matrix-light"] {
+            --bg-primary: #FFFFFF; /* Pure White */
+            --bg-secondary: #F0F0F0;
+            --text-primary: #008000; /* Dark Green */
+            --text-secondary: #404040;
+            --border-color: #D0D0D0;
+            --card-bg: #F0F0F0;
+            --card-border: #D0D0D0;
+            --header-bg: #E0E0E0;
+            --accent-primary: #008000; /* Dark Green */
+            --accent-primary-hover: #006000;
+            --accent-secondary: #00AAAA; /* Teal */
+            --accent-error: #CC0000; /* Dark Red */
+            --accent-success: #00AA00; /* Medium Green */
+            --user-bubble-bg: #E0FFE0; /* Light Green Tint */
+            --user-bubble-text: #202020;
+            --ai-bubble-bg: #F0FFF0; /* Very Light Green Tint */
+            --ai-bubble-text: #303030;
+            --sidebar-bg: #FFFFFF;
+            --sidebar-border: #D0D0D0;
+            --sidebar-item-hover: #E0E0E0;
+            --loader-dot-color: var(--accent-primary);
+            --code-block-bg: #F5FFF5;
+            --code-block-header-bg: #E0FFE0;
+            --code-block-border: #C0D0C0;
 
-        /* Solarized Light Theme */
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 100"><defs><pattern id="matrix-pattern-light" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse"><text x="1" y="8" fill="%23D0D0D0" font-family="monospace" font-size="9">01</text></pattern></defs><rect x="0" y="0" width="100%" height="100%" fill="url(%23matrix-pattern-light)"/></svg>');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        /* --- Solarized Theme --- */
         body[data-theme="solarized-light"] {
             --bg-primary: #FDF6E3; /* Base3 */
             --bg-secondary: #EEE8D5; /* Base2 */
-            --text-primary: #2AA198; /* Base01 */
-            --text-secondary: #657B83; /* Base00 */
-            --border-color: #93A1A1; /* Base0 */
+            --text-primary: #2AA198; /* Base01 (Cyan) */
+            --text-secondary: #657B83; /* Base00 (Darker Gray) */
+            --border-color: #93A1A1; /* Base0 (Light Gray) */
             --card-bg: #EEE8D5;
             --card-border: #93A1A1;
             --header-bg: #FDF6E3;
@@ -211,7 +256,7 @@
             --accent-secondary: #DC322F; /* Red */
             --accent-error: #DC322F;
             --accent-success: #859900; /* Green */
-            --user-bubble-bg: #839496; /* Base0 */
+            --user-bubble-bg: #839496; /* Base0 (Muted Teal) */
             --user-bubble-text: #FDF6E3;
             --ai-bubble-bg: #E0E0D0; /* Slightly darker than bg_secondary */
             --ai-bubble-text: #586E75;
@@ -228,17 +273,43 @@
             background-size: cover;
             background-attachment: fixed;
         }
+        body[data-theme="solarized-dark"] {
+            --bg-primary: #002B36; /* Base03 */
+            --bg-secondary: #073642; /* Base02 */
+            --text-primary: #2AA198; /* Cyan */
+            --text-secondary: #839496; /* Base0 */
+            --border-color: #586E75; /* Base01 */
+            --card-bg: #073642;
+            --card-border: #586E75;
+            --header-bg: #002B36;
+            --accent-primary: #2AA198; /* Cyan */
+            --accent-primary-hover: #268BD2; /* Blue */
+            --accent-secondary: #DC322F; /* Red */
+            --accent-error: #DC322F;
+            --accent-success: #859900; /* Green */
+            --user-bubble-bg: #586E75; /* Base01 */
+            --user-bubble-text: #FDF6E3;
+            --ai-bubble-bg: #073642; /* Base02 */
+            --ai-bubble-text: #93A1A1;
+            --sidebar-bg: #002B36;
+            --sidebar-border: #586E75;
+            --sidebar-item-hover: #073642;
+            --loader-dot-color: var(--accent-primary);
+            --code-block-bg: #073642;
+            --code-block-header-bg: #002B36;
+            --code-block-border: #586E75;
+        }
 
-        /* Dracula Theme (Dark) */
+        /* --- Dracula Theme --- */
         body[data-theme="dracula-dark"] {
-            --bg-primary: #282A36; /* Background */
-            --bg-secondary: #343746; /* Current Line/Selection */
+            --bg-primary: #000000; /* Pure black */
+            --bg-secondary: #282A36; /* Background */
             --text-primary: #BD93F9; /* Foreground */
             --text-secondary: #6272A4; /* Comment */
             --border-color: #44475A; /* Selection Background */
-            --card-bg: #343746;
+            --card-bg: #282A36;
             --card-border: #44475A;
-            --header-bg: #21222C; /* Darker Background */
+            --header-bg: #000000;
             --accent-primary: #BD93F9; /* Purple */
             --accent-primary-hover: #FF79C6; /* Pink */
             --accent-secondary: #50FA7B; /* Green */
@@ -246,32 +317,53 @@
             --accent-success: #50FA7B;
             --user-bubble-bg: #44475A;
             --user-bubble-text: #F8F8F2;
-            --ai-bubble-bg: #2F313E;
+            --ai-bubble-bg: #1A1C25;
             --ai-bubble-text: #F8F8F2;
-            --sidebar-bg: #282A36;
+            --sidebar-bg: #000000;
             --sidebar-border: #44475A;
-            --sidebar-item-hover: #343746;
+            --sidebar-item-hover: #282A36;
             --loader-dot-color: var(--accent-primary);
-            --code-block-bg: #21222C;
+            --code-block-bg: #1A1C25;
             --code-block-header-bg: #2F313E;
             --code-block-border: #44475A;
-
-            background-image: radial-gradient(at 0% 0%, hsl(260, 20%, 15%) 0%, transparent 50%),
-                              radial-gradient(at 100% 100%, hsl(300, 20%, 15%) 0%, transparent 50%);
-            background-size: cover;
-            background-attachment: fixed;
+        }
+        body[data-theme="dracula-light"] {
+            --bg-primary: #F8F8F2; /* Complementary background */
+            --bg-secondary: #F0F0E0;
+            --text-primary: #FF79C6; /* Pink */
+            --text-secondary: #6272A4; /* Comment */
+            --border-color: #CCDEF2;
+            --card-bg: #F0F0E0;
+            --card-border: #CCDEF2;
+            --header-bg: #E8E8E0;
+            --accent-primary: #FF79C6; /* Pink */
+            --accent-primary-hover: #BD93F9; /* Purple */
+            --accent-secondary: #50FA7B; /* Green */
+            --accent-error: #FF5555; /* Red */
+            --accent-success: #50FA7B;
+            --user-bubble-bg: #CCDEF2;
+            --user-bubble-text: #282A36;
+            --ai-bubble-bg: #E8E8E0;
+            --ai-bubble-text: #303240;
+            --sidebar-bg: #F8F8F2;
+            --sidebar-border: #CCDEF2;
+            --sidebar-item-hover: #F0F0E0;
+            --loader-dot-color: var(--accent-primary);
+            --code-block-bg: #E8E8E0;
+            --code-block-header-bg: #D8D8D0;
+            --code-block-border: #C2C2C0;
         }
 
-        /* Monokai Pro Theme (Dark) */
+        /* --- Monokai Pro Theme --- */
         body[data-theme="monokai-dark"] {
-            --bg-primary: #2D2A2E; /* Background */
-            --bg-secondary: #3B3A3E; /* Slightly lighter background */
+            --bg-primary: #000000; /* Pure black */
+            --bg-secondary: #2D2A2E; /* Background */
             --text-primary: #A6E22E; /* Foreground */
             --text-secondary: #75715E; /* Comment */
             --border-color: #49483E;
-            --card-bg: #3B3A3E;
+            --card-bg: #2D2A2E;
             --card-border: #49483E;
-            --header-bg: #232124; /* Darker background */
+            --header-bg: #000000;
             --accent-primary: #A6E22E; /* Green */
             --accent-primary-hover: #E6DB74; /* Yellow */
             --accent-secondary: #FD971F; /* Orange */
@@ -279,33 +371,53 @@
             --accent-success: #A6E22E;
             --user-bubble-bg: #49483E;
             --user-bubble-text: #FCFCFA;
-            --ai-bubble-bg: #363438;
+            --ai-bubble-bg: #1A1A1A;
             --ai-bubble-text: #FCFCFA;
-            --sidebar-bg: #2D2A2E;
+            --sidebar-bg: #000000;
             --sidebar-border: #49483E;
-            --sidebar-item-hover: #3B3A3E;
+            --sidebar-item-hover: #2D2A2E;
             --loader-dot-color: var(--accent-primary);
-            --code-block-bg: #232124;
-            --code-block-header-bg: #363438;
-            --code-block-border: #49483E;
-
-            background-image: radial-gradient(at 0% 0%, hsl(300, 10%, 15%) 0%, transparent 50%),
-                              radial-gradient(at 100% 100%, hsl(280, 10%, 15%) 0%, transparent 50%);
-            background-size: cover;
-            background-attachment: fixed;
+            --code-block-bg: #1A1A1A;
+            --code-block-header-bg: #27252A;
+            --code-block-border: #3F3C38;
+        }
+        body[data-theme="monokai-light"] {
+            --bg-primary: #FCFCFA; /* Light background */
+            --bg-secondary: #F5F5F0;
+            --text-primary: #F92672; /* Pink accent */
+            --text-secondary: #75715E; /* Comment */
+            --border-color: #D0D0CB;
+            --card-bg: #F5F5F0;
+            --card-border: #D0D0CB;
+            --header-bg: #EEEEEC;
+            --accent-primary: #F92672; /* Pink */
+            --accent-primary-hover: #A6E22E; /* Green */
+            --accent-secondary: #FD971F; /* Orange */
+            --accent-error: #CC3333;
+            --accent-success: #A6E22E;
+            --user-bubble-bg: #E0E0D8;
+            --user-bubble-text: #30302E;
+            --ai-bubble-bg: #EEEEEC;
+            --ai-bubble-text: #40403C;
+            --sidebar-bg: #FCFCFA;
+            --sidebar-border: #D0D0CB;
+            --sidebar-item-hover: #F5F5F0;
+            --loader-dot-color: var(--accent-primary);
+            --code-block-bg: #EEEEEC;
+            --code-block-header-bg: #E0E0D8;
+            --code-block-border: #C0C0B8;
         }
 
-
-        /* Nord Theme (Dark) */
+        /* --- Nord Theme --- */
         body[data-theme="nord-dark"] {
-            --bg-primary: #2E3440; /* Nord0 */
-            --bg-secondary: #3B4252; /* Nord1 */
-            --text-primary: #88C0D0; /* Nord4 */
-            --text-secondary: #ECEFF4; /* Nord6 */
-            --border-color: #4C566A; /* Nord3 */
-            --card-bg: #3B4252;
+            --bg-primary: #000000; /* Pure black */
+            --bg-secondary: #2E3440; /* Nord0 */
+            --text-primary: #88C0D0; /* Nord4 (Light Blue) */
+            --text-secondary: #ECEFF4; /* Nord6 (White) */
+            --border-color: #4C566A; /* Nord3 (Dark Gray) */
+            --card-bg: #2E3440;
             --card-border: #4C566A;
-            --header-bg: #242933; /* Darker than Nord0 */
+            --header-bg: #000000;
             --accent-primary: #88C0D0; /* Nord8 (Cyan) */
             --accent-primary-hover: #81A1C1; /* Nord7 (Blue) */
             --accent-secondary: #B48EAD; /* Nord10 (Purple) */
@@ -313,33 +425,53 @@
             --accent-success: #A3BE8C; /* Nord14 (Green) */
             --user-bubble-bg: #4C566A;
             --user-bubble-text: #D8DEE9;
-            --ai-bubble-bg: #343A48;
+            --ai-bubble-bg: #1A1D23;
             --ai-bubble-text: #D8DEE9;
-            --sidebar-bg: #2E3440;
+            --sidebar-bg: #000000;
             --sidebar-border: #4C566A;
-            --sidebar-item-hover: #3B4252;
+            --sidebar-item-hover: #2E3440;
             --loader-dot-color: var(--accent-primary);
-            --code-block-bg: #242933;
-            --code-block-header-bg: #343A48;
+            --code-block-bg: #1A1D23;
+            --code-block-header-bg: #242933;
             --code-block-border: #4C566A;
-
-            background-image: radial-gradient(at 0% 0%, hsl(220, 15%, 15%) 0%, transparent 50%),
-                              radial-gradient(at 100% 100%, hsl(230, 15%, 15%) 0%, transparent 50%);
-            background-size: cover;
-            background-attachment: fixed;
+        }
+        body[data-theme="nord-light"] {
+            --bg-primary: #ECEFF4; /* Nord6 */
+            --bg-secondary: #D8DEE9; /* Nord4 */
+            --text-primary: #5E81AC; /* Nord9 (Blue) */
+            --text-secondary: #4C566A; /* Nord3 */
+            --border-color: #B4BFCD;
+            --card-bg: #D8DEE9;
+            --card-border: #B4BFCD;
+            --header-bg: #DEE3EB;
+            --accent-primary: #5E81AC; /* Nord9 (Blue) */
+            --accent-primary-hover: #81A1C1; /* Nord7 (Light Blue) */
+            --accent-secondary: #B48EAD; /* Nord10 (Purple) */
+            --accent-error: #BF616A; /* Nord11 (Red) */
+            --accent-success: #A3BE8C; /* Nord14 (Green) */
+            --user-bubble-bg: #AABECF;
+            --user-bubble-text: #2E3440;
+            --ai-bubble-bg: #DEE3EB;
+            --ai-bubble-text: #3B4252;
+            --sidebar-bg: #ECEFF4;
+            --sidebar-border: #B4BFCD;
+            --sidebar-item-hover: #D8DEE9;
+            --loader-dot-color: var(--accent-primary);
+            --code-block-bg: #DEE3EB;
+            --code-block-header-bg: #C0C7D1;
+            --code-block-border: #B4BFCD;
         }
 
-
-        /* Gruvbox Dark Theme */
+        /* --- Gruvbox Theme --- */
         body[data-theme="gruvbox-dark"] {
-            --bg-primary: #282828; /* bg0_h */
-            --bg-secondary: #3C3836; /* bg0 */
-            --text-primary: #83A598; /* fg */
+            --bg-primary: #000000; /* Pure black */
+            --bg-secondary: #282828; /* bg0_h */
+            --text-primary: #83A598; /* aqua */
             --text-secondary: #A89984; /* grey */
             --border-color: #504945; /* bg1 */
-            --card-bg: #3C3836;
+            --card-bg: #282828;
             --card-border: #504945;
-            --header-bg: #1D2021; /* Darker */
+            --header-bg: #000000;
             --accent-primary: #83A598; /* aqua */
             --accent-primary-hover: #B8BB26; /* green */
             --accent-secondary: #FABD2F; /* yellow */
@@ -347,32 +479,53 @@
             --accent-success: #B8BB26;
             --user-bubble-bg: #504945;
             --user-bubble-text: #EBDBB2;
-            --ai-bubble-bg: #32302F;
+            --ai-bubble-bg: #1D2021;
             --ai-bubble-text: #EBDBB2;
-            --sidebar-bg: #282828;
+            --sidebar-bg: #000000;
             --sidebar-border: #504945;
-            --sidebar-item-hover: #3C3836;
+            --sidebar-item-hover: #282828;
             --loader-dot-color: var(--accent-primary);
             --code-block-bg: #1D2021;
             --code-block-header-bg: #32302F;
             --code-block-border: #504945;
-
-            background-image: radial-gradient(at 0% 0%, hsl(30, 5%, 15%) 0%, transparent 50%),
-                              radial-gradient(at 100% 100%, hsl(20, 5%, 15%) 0%, transparent 50%);
-            background-size: cover;
-            background-attachment: fixed;
+        }
+        body[data-theme="gruvbox-light"] {
+            --bg-primary: #FBF1C7; /* bg9 */
+            --bg-secondary: #FEF6E4; /* bg */
+            --text-primary: #427B58; /* green */
+            --text-secondary: #7C6F64; /* gray */
+            --border-color: #BDAEAA; /* fg_gutter */
+            --card-bg: #FEF6E4;
+            --card-border: #BDAEAA;
+            --header-bg: #EBDBB2; /* bg_dim */
+            --accent-primary: #427B58; /* green */
+            --accent-primary-hover: #8EC07C; /* light green */
+            --accent-secondary: #D79921; /* yellow */
+            --accent-error: #CC241D; /* red */
+            --accent-success: #8EC07C;
+            --user-bubble-bg: #D5C4A1; /* bg_soft */
+            --user-bubble-text: #3C3836;
+            --ai-bubble-bg: #EBDBB2;
+            --ai-bubble-text: #504945;
+            --sidebar-bg: #FBF1C7;
+            --sidebar-border: #BDAEAA;
+            --sidebar-item-hover: #EBDBB2;
+            --loader-dot-color: var(--accent-primary);
+            --code-block-bg: #EBDBB2;
+            --code-block-header-bg: #D5C4A1;
+            --code-block-border: #BDAEAA;
         }
 
-        /* Catppuccin Macchiato Theme (Dark, but lighter) */
-        body[data-theme="catppuccin-dark"] {
-            --bg-primary: #24273A; /* Base */
-            --bg-secondary: #363A4F; /* Mantle */
-            --text-primary: #8BD5CA; /* Text */
+        /* --- Catppuccin Theme --- */
+        body[data-theme="catppuccin-dark"] { /* Macchiato */
+            --bg-primary: #000000; /* Pure black */
+            --bg-secondary: #24273A; /* Base */
+            --text-primary: #8BD5CA; /* Teal */
             --text-secondary: #A5ADCE; /* Subtext0 */
             --border-color: #494D64; /* Surface1 */
-            --card-bg: #363A4F;
+            --card-bg: #24273A;
             --card-border: #494D64;
-            --header-bg: #1E2030; /* Crust */
+            --header-bg: #000000;
             --accent-primary: #8BD5CA; /* Teal */
             --accent-primary-hover: #B7BFEF; /* Lavender */
             --accent-secondary: #F4B8E4; /* Pink */
@@ -380,23 +533,43 @@
             --accent-success: #A6DA95; /* Green */
             --user-bubble-bg: #494D64;
             --user-bubble-text: #CAD3F5;
-            --ai-bubble-bg: #2E3243;
+            --ai-bubble-bg: #1A1D2A;
             --ai-bubble-text: #CAD3F5;
-            --sidebar-bg: #24273A;
+            --sidebar-bg: #000000;
             --sidebar-border: #494D64;
-            --sidebar-item-hover: #363A4F;
+            --sidebar-item-hover: #24273A;
             --loader-dot-color: var(--accent-primary);
-            --code-block-bg: #1E2030;
+            --code-block-bg: #1A1D2A;
             --code-block-header-bg: #2E3243;
             --code-block-border: #494D64;
-
-            background-image: radial-gradient(at 0% 0%, hsl(230, 15%, 15%) 0%, transparent 50%),
-                              radial-gradient(at 100% 100%, hsl(250, 15%, 15%) 0%, transparent 50%);
-            background-size: cover;
-            background-attachment: fixed;
+        }
+        body[data-theme="catppuccin-light"] { /* Latte */
+            --bg-primary: #EFF1F5; /* Base */
+            --bg-secondary: #E6E9EF; /* Mantle */
+            --text-primary: #179299; /* Teal */
+            --text-secondary: #5C5F77; /* Subtext0 */
+            --border-color: #CBD0E1; /* Surface1 */
+            --card-bg: #E6E9EF;
+            --card-border: #CBD0E1;
+            --header-bg: #EAECEF;
+            --accent-primary: #179299; /* Teal */
+            --accent-primary-hover: #7287FD; /* Lavender */
+            --accent-secondary: #EA76CB; /* Pink */
+            --accent-error: #E64553; /* Red */
+            --accent-success: #40A02B; /* Green */
+            --user-bubble-bg: #CBD0E1;
+            --user-bubble-text: #4C4F69;
+            --ai-bubble-bg: #EAECEF;
+            --ai-bubble-text: #626880;
+            --sidebar-bg: #EFF1F5;
+            --sidebar-border: #CBD0E1;
+            --sidebar-item-hover: #E6E9EF;
+            --loader-dot-color: var(--accent-primary);
+            --code-block-bg: #EAECEF;
+            --code-block-header-bg: #D4D7E2;
+            --code-block-border: #C8CDDD;
         }
 
-        /* --- NEW THEMES END HERE --- */
 
         /* --- Global Styles & Overrides --- */
 
@@ -968,14 +1141,14 @@
             <h3 class="text-sm font-semibold uppercase" style="color: var(--text-secondary);">Themes</h3>
             <select id="app-theme-select-sidebar" class="w-full p-2 rounded-md border text-sm focus:ring-[var(--accent-primary)] focus:border-[var(--accent-primary)]" style="background-color: var(--card-bg); border-color: var(--border-color); color: var(--text-primary);" aria-label="Select App Theme">
                 <option value="coder">Coder's Theme</option>
-                <option value="cyberpunk">Cyberpunk Neon (Dark)</option>
-                <option value="matrix">Matrix Code (Dark)</option>
-                <option value="solarized">Solarized (Light)</option>
-                <option value="dracula">Dracula (Dark)</option>
-                <option value="monokai">Monokai Pro (Dark)</option>
-                <option value="nord">Nord (Dark)</option>
-                <option value="gruvbox">Gruvbox (Dark)</option>
-                <option value="catppuccin">Catppuccin (Dark)</option>
+                <option value="cyberpunk">Cyberpunk Neon</option>
+                <option value="matrix">Matrix Code</option>
+                <option value="solarized">Solarized</option>
+                <option value="dracula">Dracula</option>
+                <option value="monokai">Monokai Pro</option>
+                <option value="nord">Nord</option>
+                <option value="gruvbox">Gruvbox</option>
+                <option value="catppuccin">Catppuccin</option>
             </select>
         </div>
 
@@ -1131,8 +1304,8 @@
         // --- Global State and Constants ---
         const CHAT_SESSIONS_KEY = 'ultimateCoder_chat_sessions';
         const CURRENT_SESSION_ID_KEY = 'ultimateCoder_current_session_id';
-        const THEME_STORAGE_KEY = 'ultimateCoder_selected_theme';
-        const MODE_STORAGE_KEY = 'ultimateCoder_theme_mode';
+        const THEME_STORAGE_KEY = 'ultimateCoder_selected_theme'; // Stores the base theme name (e.g., 'coder', 'cyberpunk')
+        const MODE_STORAGE_KEY = 'ultimateCoder_theme_mode';     // Stores 'dark' or 'light'
         const DEFAULT_THEME_NAME = 'coder';
         const DEFAULT_MODE = 'dark';
         const CUSTOM_PROMPT_TEXT_KEY = 'ultimateCoder_custom_prompt_text';
@@ -1142,10 +1315,10 @@
         let allChatSessions = {};
         let currentSessionId = null;
         let chatAttachments = [];
-        let messageTextCache = new Map(); // Moved to top-level scope
+        let messageTextCache = new Map();
 
-        let currentThemeName = DEFAULT_THEME_NAME;
-        let currentMode = DEFAULT_MODE;
+        let currentThemeName = DEFAULT_THEME_NAME; // Base theme name
+        let currentMode = DEFAULT_MODE;             // 'dark' or 'light'
 
         let currentUtterance = null;
         let isSpeaking = false;
@@ -1258,7 +1431,7 @@
                     chatInput.dataset.initialText = chatInput.value;
                 };
 
-                recognition.onresult = (event) => {
+                recognition.onresult = (event => {
                     let interimTranscript = '';
                     for (let i = event.resultIndex; i < event.results.length; ++i) {
                         if (event.results[i].isFinal) {
@@ -1270,7 +1443,7 @@
                     chatInput.value = (chatInput.dataset.initialText || '') + finalTranscript + interimTranscript;
                     adjustChatInputHeight();
                     chatInput.scrollLeft = chatInput.scrollWidth;
-                };
+                });
 
                 recognition.onend = () => {
                     isVoiceInputActive = false;
@@ -1326,18 +1499,14 @@
                     appThemeSelect.value = themeName;
                 }
 
-                // Dynamic Prism theme loading
+                // Dynamic Prism theme loading based on currentMode
                 const prismDarkThemeLink = document.getElementById('prism-dark-theme');
                 const prismLightThemeLink = document.getElementById('prism-light-theme');
 
-                // Themes that are always dark or always light will override the global dark mode toggle for Prism
-                const forcedDarkThemes = ['cyberpunk', 'matrix', 'dracula', 'monokai', 'nord', 'gruvbox', 'catppuccin'];
-                const forcedLightThemes = ['solarized'];
-
-                if (forcedDarkThemes.includes(themeName) || (mode === 'dark' && !forcedLightThemes.includes(themeName))) {
+                if (currentMode === 'dark') {
                     if (prismDarkThemeLink) prismDarkThemeLink.disabled = false;
                     if (prismLightThemeLink) prismLightThemeLink.disabled = true;
-                } else if (forcedLightThemes.includes(themeName) || (mode === 'light' && !forcedDarkThemes.includes(themeName))) {
+                } else { // currentMode === 'light'
                     if (prismDarkThemeLink) prismDarkThemeLink.disabled = true;
                     if (prismLightThemeLink) prismLightThemeLink.disabled = false;
                 }
@@ -1358,22 +1527,7 @@
             if (appThemeSelect) {
                 appThemeSelect.addEventListener('change', (event) => {
                     const newThemeName = event.target.value;
-                    let newMode = currentMode; // Start with current mode
-                    
-                    // Specific themes are forced to dark or light
-                    const forcedDarkThemes = ['cyberpunk', 'matrix', 'dracula', 'monokai', 'nord', 'gruvbox', 'catppuccin'];
-                    const forcedLightThemes = ['solarized'];
-
-                    if (forcedDarkThemes.includes(newThemeName)) {
-                         newMode = 'dark';
-                         darkModeToggle.checked = true; // Visually update toggle
-                    } else if (forcedLightThemes.includes(newThemeName)) {
-                        newMode = 'light';
-                        darkModeToggle.checked = false; // Visually update toggle
-                    }
-                    // For 'coder' theme, or if a theme doesn't force a mode, keep the current `newMode` based on the toggle.
-                    
-                    applyTheme(newThemeName, newMode);
+                    applyTheme(newThemeName, currentMode); // Apply selected base theme with current mode
                 });
             }
 
@@ -2517,6 +2671,10 @@
             } else if (appThemeSelect && appThemeSelect.options.length > 0) {
                 appThemeSelect.value = DEFAULT_THEME_NAME;
             }
+
+            // Set dark mode toggle state on load
+            darkModeToggle.checked = (localStorage.getItem(MODE_STORAGE_KEY) || DEFAULT_MODE) === 'dark';
+
 
             // Initialize custom prompt settings
             customPromptText = localStorage.getItem(CUSTOM_PROMPT_TEXT_KEY) || '';
