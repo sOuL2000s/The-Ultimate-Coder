@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ultimate-coder-cache-v1.3'; // Updated cache version for new app and theme changes
+const CACHE_NAME = 'ultimate-coder-cache-v1.4'; // Updated cache version for new app and theme changes
 const urlsToCache = [
     '/',
     'index.html',
